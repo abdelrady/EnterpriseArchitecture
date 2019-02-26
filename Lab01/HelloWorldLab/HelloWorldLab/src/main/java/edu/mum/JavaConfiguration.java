@@ -5,6 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
+import edu.mum.component.MessageOrigin;
+import edu.mum.component.impl.FixedMessageOrigin;
+
 @Configuration
 @ComponentScan("edu.mum.component") // search the edu.mum.component package for @Component classes
 public class JavaConfiguration {
@@ -17,4 +20,9 @@ public class JavaConfiguration {
         return resource;
     }
 	
+
+   /* @Bean(name = "messageOrigin")
+    public MessageOrigin getMessageOrigin() {
+        return new FixedMessageOrigin();
+    }*/
 }

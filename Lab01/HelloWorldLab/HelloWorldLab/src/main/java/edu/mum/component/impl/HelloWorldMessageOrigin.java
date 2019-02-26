@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import edu.mum.component.MessageOrigin;
 
 @Component
-public class HelloWorldMessageOrigin implements MessageOrigin, MessageSourceAware {
+public class HelloWorldMessageOrigin /*implements MessageOrigin, MessageSourceAware*/ {
  
 private MessageSource messageSource;
 	
@@ -17,7 +17,7 @@ private MessageSource messageSource;
  		
 		  return messageSource.getMessage("messageText",null, Locale.getDefault());	}
 
-	@Override
+	//@Override
 	public void setMessageSource(MessageSource messageSource) {
 		this.messageSource = messageSource;
 		
