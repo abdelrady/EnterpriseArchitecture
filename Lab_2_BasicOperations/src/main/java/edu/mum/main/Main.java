@@ -13,8 +13,8 @@ import edu.mum.service.impl.UserServiceImpl;
 
 public class Main {
 	
- 	@Autowired
-	UserService userService;
+ 	//@Autowired
+	//UserService userService;
 	
   public static void main(String[] args) {
 
@@ -27,15 +27,8 @@ public class Main {
       }
       
       System.out.println("Test");
-	  //UserService userService = (UserService)context.getBean("userService");
+	  UserService userService = (UserService)context.getBean("userServiceImpl");
 
-      new Main().internal();
-  }  
-  
-  public void internal() {
-
-      
-      
       User user = new User();
       user.setFirstName("Abdelrady");
       user.setLastName("Tantawy");
@@ -49,6 +42,13 @@ public class Main {
      System.out.println("User Name: " + user2.getFirstName() + " " + user2.getLastName());
 
      
+      new Main().internal();
+  }  
+  
+  public void internal() {
+
+      
+      
   }
   
  }

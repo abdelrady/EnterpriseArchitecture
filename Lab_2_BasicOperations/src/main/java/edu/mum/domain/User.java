@@ -17,7 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
-@Entity(name = "users") 
+@Entity(name = "user") 
   public class User implements Serializable  {
 
 	 @Id
@@ -31,10 +31,10 @@ import javax.persistence.Id;
 	 @Column(name="LASTNAME", nullable = false)
      private String lastName;
 
-	 @Column(name="EMAIL", nullable = false)
+	 @Column(name="email", nullable = false)
      private String email;
 
-	 @Column(name="RANK", nullable = false)
+	 @Column(name="ranking", nullable = false)
      private int ranking = 0;
 
 	 @Column(name="IS_ADMIN", nullable = false)
