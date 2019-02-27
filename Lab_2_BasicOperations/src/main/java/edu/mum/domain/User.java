@@ -17,8 +17,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
-@Entity(name = "user") 
+@Entity() 
+@Table(name="Users")
   public class User implements Serializable  {
+
+	private static final long serialVersionUID = 1L;
 
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.AUTO)
@@ -31,13 +34,13 @@ import javax.persistence.Id;
 	 @Column(name="LASTNAME", nullable = false)
      private String lastName;
 
-	 @Column(name="email", nullable = false)
+	@Column(name="EMAIL")
      private String email;
 
 	 @Column(name="ranking", nullable = false)
      private int ranking = 0;
 
-	 @Column(name="IS_ADMIN", nullable = false)
+     @Column(name="IS_ADMIN", nullable = false)
      private boolean admin = false;
      
      @Version
