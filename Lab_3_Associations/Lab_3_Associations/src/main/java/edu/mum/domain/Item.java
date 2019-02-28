@@ -63,7 +63,7 @@ import java.util.*;
     private Date created = new Date();
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "START_DATE", nullable = false, updatable = false)
+    @Column(name = "START_DATE", nullable = true, updatable = false)
     private Date startDate;
 
     @Temporal(TemporalType.TIMESTAMP)
