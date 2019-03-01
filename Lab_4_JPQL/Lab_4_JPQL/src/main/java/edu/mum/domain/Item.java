@@ -13,7 +13,7 @@ import java.util.*;
 @Entity
 @Table(name = "ITEM")
 @Transactional
-@NamedQueries(value = { @NamedQuery(name = "Item.findItemByCategoryName", query = "Select i from Item i Join i.categories c where c.name =:name") })
+@NamedQueries(value = { @NamedQuery(name = "Item.findByCategoryName", query = "Select i from Item i Join i.categories c where c.name =:name") })
 public class Item   {
 
      @Id 

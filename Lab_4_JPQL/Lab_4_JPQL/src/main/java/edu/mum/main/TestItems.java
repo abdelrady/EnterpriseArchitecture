@@ -62,6 +62,10 @@ public class TestItems {
 		    itemSkates.setReservePrice(new BigDecimal(26.0));
 		    itemSkates.setInitialPrice(new BigDecimal(22.0));
 
+		    // Reload categories from db
+		    categoryToys = categoryService.findOne(categoryToys.getId());
+		    categorySports = categoryService.findOne(categorySports.getId());
+		    
 		    itemSkates.addCategory(categoryToys);
 		    itemSkates.addCategory(categorySports);
  		    

@@ -13,7 +13,7 @@ import edu.mum.domain.User;
 import edu.mum.service.ItemService;
 
 @Service
-@Transactional 
+@Transactional(propagation=org.springframework.transaction.annotation.Propagation.REQUIRES_NEW, isolation=org.springframework.transaction.annotation.Isolation.READ_COMMITTED)
 public class ItemServiceImpl implements ItemService {
 	
 	
