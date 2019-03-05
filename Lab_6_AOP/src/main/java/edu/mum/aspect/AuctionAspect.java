@@ -7,6 +7,8 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+import edu.mum.domain.User;
+
 @Aspect
 @Component
 public class AuctionAspect {
@@ -58,7 +60,7 @@ public class AuctionAspect {
 	 */
 
 	// 6 explicit pointcut - with a combination of a within() and an args()
-	@Pointcut("within(edu.mum.service..*) && args(Long)")
+	/*@Pointcut("within(edu.mum.service..*) && args(Long)")
 	public void logMethodNames() {
 
 	}
@@ -67,8 +69,20 @@ public class AuctionAspect {
 	public void logMethodNamesExplicit(JoinPoint joinPoint) {
 		System.out.println("TARGET CLASS : " + joinPoint.getSignature().getDeclaringTypeName() + "."
 				+ joinPoint.getSignature().getName());
+	}*/
+
+	//7
+	@Pointcut("within(edu.mum.service..*) && args(User)")
+	public void logMethodNames() {
+
 	}
 
+	@After("logMethodNames()")
+	public void logResourceName(JoinPoint joinPoint, User user) {
+		System.out.println("TARGET CLASS : " + joinPoint.getSignature().getDeclaringTypeName() + "."
+				+ joinPoint.getSignature().getName() + ", User Name: " + user.getFirstName() + " " + user.getLastName());
+	}
+	
 	// 6-Replace the execution pointcut with a combination of a within() and an
 	// args() pointcut
 	// @Before("within(edu.mum.service..*)")
