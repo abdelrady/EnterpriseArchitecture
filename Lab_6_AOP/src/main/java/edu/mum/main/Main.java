@@ -6,6 +6,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
+import edu.mum.domain.User;
+import edu.mum.service.UserService;
+
 @Component
 public class Main {
 
@@ -20,6 +23,9 @@ public class Main {
  
 	@Autowired
 	TestFindItemsBySellOrBuy testFindItemsBySellOrBuy;
+	
+	@Autowired
+	UserService userService;
 	
   public static void main(String[] args) {
 

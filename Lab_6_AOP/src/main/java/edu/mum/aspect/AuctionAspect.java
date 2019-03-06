@@ -72,12 +72,12 @@ public class AuctionAspect {
 	}*/
 
 	//7
-	@Pointcut("within(edu.mum.service..*) && args(User)")
+	@Pointcut("within(edu.mum.service..*)")
 	public void logMethodNames() {
 
 	}
 
-	@After("logMethodNames()")
+	@After("logMethodNames() && args(user)")
 	public void logResourceName(JoinPoint joinPoint, User user) {
 		System.out.println("TARGET CLASS : " + joinPoint.getSignature().getDeclaringTypeName() + "."
 				+ joinPoint.getSignature().getName() + ", User Name: " + user.getFirstName() + " " + user.getLastName());
